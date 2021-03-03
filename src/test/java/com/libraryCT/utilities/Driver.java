@@ -18,7 +18,7 @@ import java.net.URL;
 
 public class Driver {
 
-    private static final InheritableThreadLocal<WebDriver> driverThreadLocal = new InheritableThreadLocal<>();
+    private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
     private Driver() {}
 
@@ -71,7 +71,7 @@ public class Driver {
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.setCapability("platform", Platform.ANY);
                     try {
-                        URL url = new URL("http://3.235.179.180:4444/wd/hub");
+                        URL url = new URL("http://192.168.0.40:4444/wd/hub");
                         driverThreadLocal.set(new RemoteWebDriver(url,chromeOptions));
                     }catch (Exception e){
                         e.printStackTrace();

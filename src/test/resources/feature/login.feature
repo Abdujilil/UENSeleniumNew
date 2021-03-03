@@ -8,7 +8,7 @@ Feature: Login
     Then the user is on "<page>" page
     Examples:
       | role      | page      |
-      | student   | bookss     |
+      | student   | books     |
       | librarian | dashboard |
 
 
